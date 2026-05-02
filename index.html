@@ -1,9 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loading...</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0f1115;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    /* Stylish loading text */
+    p {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Spinner styles */
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #444;
+      border-top-color: #00ffcc;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    /* Animations */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Optional: add a subtle glow or shadow for a more modern effect */
+    .loader {
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+    }
+
+    /* Add a slight hover effect if needed (not necessary for loader) */
+  </style>
   <script>
-    window.location.replace("https://your-vercel-site.vercel.app");
+    // Redirect after 0.5 seconds
+    setTimeout(() => {
+      window.location.href = "https://your-vercel-site.vercel.app";
+    }, 500);
   </script>
 </head>
-<body></body>
+<body>
+  <p>Loading portfolio...</p>
+  <div class="loader"></div>
+</body>
 </html>
